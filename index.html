@@ -260,19 +260,17 @@
             padding: 40px 30px;
             text-align: center;
             transition: var(--transition);
-            cursor: pointer;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
             border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            background: var(--bg-card-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .service-icon {
-            font-size: 3rem;
-            color: var(--accent-light);
+            font-size: 2.5rem;
+            color: var(--accent);
             margin-bottom: 20px;
         }
 
@@ -280,6 +278,64 @@
             font-size: 1.2rem;
             font-weight: 600;
             color: var(--text-main);
+        }
+
+        /* --- Education --- */
+        .education {
+            padding: 80px 0;
+        }
+
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            transition: var(--transition);
+        }
+
+        .edu-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .edu-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(107, 70, 193, 0.1);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .edu-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .edu-content p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        .edu-year {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            font-weight: 500;
         }
 
         /* --- Stats --- */
@@ -559,7 +615,8 @@
                 font-size: 2.5rem;
             }
 
-            .hero-img-bg, .hero-img {
+            .hero-img-bg,
+            .hero-img {
                 width: 250px;
                 height: 320px;
             }
@@ -602,6 +659,12 @@
                 flex-direction: column;
             }
 
+            .edu-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
             .footer-content {
                 flex-direction: column;
                 gap: 40px;
@@ -625,7 +688,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#project">Project</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#education">Education</a></li>
             </ul>
             <a href="#contact" class="btn btn-outline">Contact Me</a>
         </nav>
@@ -635,7 +698,7 @@
             <div class="hero-text animate-up">
                 <h3>Hello Buds</h3>
                 <h1>I am <span>Muhammad Dino Muzakki</span></h1>
-                <h2>Web Developer & Data Enthusiast</h2>
+                <h2>Web Developer | Data & AI Enthusiast</h2>
                 <p>Saya menggabungkan pengembangan web dengan analisis data. Berpengalaman membangun aplikasi sistem
                     informasi (Kasir) menggunakan framework Laravel dan mengimplementasikan model Machine Learning
                     (Naive Bayes, Decision Tree, Linear Regression) untuk analisis sentimen, lalu menyajikannya ke dalam
@@ -656,21 +719,21 @@
         <section class="services" id="about">
             <div class="section-title">
                 <span>What I Offer</span>
-                <h2>Creates Professional Design That's oriented towards client needs</h2>
+                <h2>Delivering Reliable Web Applications and Data-Driven Insights</h2>
                 <div class="line"></div>
             </div>
             <div class="services-grid">
-                <div class="service-card animate-up" style="animation-delay: 0.1s;">
-                    <i class="fa-solid fa-pen-nib service-icon"></i>
-                    <h3>Content Design</h3>
-                </div>
                 <div class="service-card animate-up" style="animation-delay: 0.2s; border-color: var(--accent);">
                     <i class="fa-solid fa-brain service-icon"></i>
                     <h3>Machine Learning</h3>
                 </div>
-                <div class="service-card animate-up" style="animation-delay: 0.3s;">
+                <div class="service-card animate-up" style="animation-delay: 0.3s; border-color: var(--accent);">
                     <i class="fa-solid fa-desktop service-icon"></i>
                     <h3>Web Design</h3>
+                </div>
+                <div class="service-card animate-up" style="animation-delay: 0.4s; border-color: var(--accent);">
+                    <i class="fa-solid fa-database service-icon"></i>
+                    <h3>Database (MySQL)</h3>
                 </div>
             </div>
         </section>
@@ -682,7 +745,7 @@
                     <h3>02</h3>
                     <p>Projects Done</p>
                 </div>
-                <div class="stat-item active">
+                <div class="stat-item">
                     <h3>03</h3>
                     <p>Algorithms Mastered</p>
                 </div>
@@ -693,6 +756,41 @@
                 <div class="stat-item">
                     <h3 id="ml-exp">06</h3>
                     <p>Months in ML</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Experience -->
+        <section class="education" id="education">
+            <div class="section-title">
+                <span>My Journey</span>
+                <h2>Education & Experience</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="edu-card animate-up" style="margin-bottom: 20px;">
+                <div class="edu-icon">
+                    <img src="logo-unp.png" alt="Logo UNP" style="width: 50px; height: 50px; object-fit: contain;">
+                </div>
+                <div class="edu-content">
+                    <span class="edu-year">2022 - 2026</span>
+                    <h3>Universitas Negeri Padang</h3>
+                    <p>Program Studi Pendidikan Teknik Informatika</p>
+                </div>
+            </div>
+
+            <div class="edu-card animate-up" style="animation-delay: 0.2s;">
+                <div class="edu-icon" style="background: rgba(107, 70, 193, 0.1);">
+                    <img src="logo-kemenkumham.png" alt="Logo Kemenkumham"
+                        style="width: 50px; height: 50px; object-fit: contain;">
+                </div>
+                <div class="edu-content">
+                    <span class="edu-year">2026 (Internship)</span>
+                    <h3>Kantor Wilayah Kementerian Hukum Sumatera Barat</h3>
+                    <p style="color: var(--text-main); font-weight: 500;">Humas (Hubungan Masyarakat)</p>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">Bertanggung jawab merancang desain visual, termasuk
+                        membuat banner untuk acara besar kantor dan mendesain postingan ucapan selamat untuk hari-hari
+                        besar sepanjang tahun 2026.</p>
                 </div>
             </div>
         </section>
@@ -716,7 +814,8 @@
                                 (Laravel)</p>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">View Details</a>
+                    <a href="https://github.com/bang-xinn/KasirQ" target="_blank" class="btn btn-primary"
+                        style="padding: 8px 16px; font-size: 0.85rem;">View Details</a>
                 </div>
 
                 <!-- Project 2 -->
@@ -844,25 +943,25 @@
         // Update pengalaman secara progresif berdasarkan tanggal mulai
         function updateExperience() {
             const currentDate = new Date();
-            
+
             // Laravel Experience (mulai Maret 2025)
             const laravelStartDate = new Date('2025-03-01');
             const laravelDiffTime = Math.abs(currentDate - laravelStartDate);
             const laravelDiffDays = Math.ceil(laravelDiffTime / (1000 * 60 * 60 * 24));
             let laravelYears = (laravelDiffDays / 365).toFixed(1);
-            
+
             // ML Experience (mulai Maret 2026)
             const mlStartDate = new Date('2026-03-01');
             const mlDiffTime = Math.abs(currentDate - mlStartDate);
             const mlDiffDays = Math.ceil(mlDiffTime / (1000 * 60 * 60 * 24));
             let mlMonths = Math.floor(mlDiffDays / 30);
-            
+
             // Format angka
             const elLaravel = document.getElementById('laravel-exp');
             const elML = document.getElementById('ml-exp');
-            
-            if(elLaravel) elLaravel.innerText = laravelYears;
-            if(elML) elML.innerText = (mlMonths < 10 ? '0' : '') + mlMonths;
+
+            if (elLaravel) elLaravel.innerText = laravelYears;
+            if (elML) elML.innerText = (mlMonths < 10 ? '0' : '') + mlMonths;
         }
 
         updateExperience();
