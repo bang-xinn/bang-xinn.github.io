@@ -115,27 +115,16 @@
             gap: 8px;
         }
 
-        .btn-outline {
+        .btn-outline, .btn-primary {
             border: 1px solid var(--accent);
-            color: var(--text-main);
+            color: var(--accent);
             background: transparent;
         }
 
-        .btn-outline:hover {
-            background: var(--accent);
-            box-shadow: 0 0 15px rgba(107, 70, 193, 0.4);
-        }
-
-        .btn-primary {
+        .btn-outline:hover, .btn-primary:hover {
             background: var(--accent);
             color: #fff;
-            border: 1px solid var(--accent);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-light);
-            border-color: var(--accent-light);
-            box-shadow: 0 0 15px rgba(128, 90, 213, 0.4);
+            box-shadow: 0 0 15px rgba(107, 70, 193, 0.4);
             transform: translateY(-2px);
         }
 
@@ -705,7 +694,7 @@
                     platform web interaktif.</p>
                 <div class="hero-buttons">
                     <a href="#" class="btn btn-primary"><i class="fa-solid fa-download"></i> Download CV</a>
-                    <a href="#" class="btn" style="color: var(--text-muted);">Hire Me</a>
+                    <a href="#" class="btn btn-outline">Hire Me</a>
                 </div>
             </div>
             <div class="hero-img-wrapper">
@@ -841,8 +830,8 @@
                 <p>Feel free to reach out and let's talk about it.</p>
             </div>
             <div style="display: flex; gap: 15px;">
-                <a href="#" class="btn btn-outline" style="border: none;">Learn More</a>
-                <a href="#" class="btn btn-primary">Contact Me</a>
+                <a href="#" class="btn btn-outline">Learn More</a>
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
             </div>
         </section>
 
