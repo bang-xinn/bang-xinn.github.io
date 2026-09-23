@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +34,10 @@
             line-height: 1.7;
             overflow-x: hidden;
         }
+
+        /* Language Toggle Logic */
+        body.english-mode .lang-id { display: none !important; }
+        body:not(.english-mode) .lang-en { display: none !important; }
 
         a {
             text-decoration: none;
@@ -157,6 +161,7 @@
         .social-links {
             display: flex;
             gap: 20px;
+            align-items: center;
         }
 
         .social-links a {
@@ -167,6 +172,26 @@
         .social-links a:hover {
             color: var(--text-main);
             transform: translateY(-2px);
+        }
+
+        .lang-toggle-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            margin-left: 10px;
+        }
+
+        .lang-toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* --- Main Content (Right) --- */
@@ -400,14 +425,24 @@
                     <img src="assets/profile.jpg" alt="Muhammad Dino Muzakki" class="avatar" onerror="this.src='profile.jpg'">
                     <h1>Muhammad Dino Muzakki</h1>
                     <h2>Web Developer | Data & AI Enthusiast</h2>
-                    <p>Membangun sistem informasi dan mengintegrasikan model Machine Learning ke dalam ekosistem web yang interaktif dan andal.</p>
+                    <p class="lang-id">Membangun sistem informasi dan mengintegrasikan model Machine Learning ke dalam ekosistem web yang interaktif dan andal.</p>
+                    <p class="lang-en">Building information systems and integrating Machine Learning models into interactive and reliable web ecosystems.</p>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <nav class="sidebar-nav">
-                    <a href="#about" class="active">Pendekatan Saya</a>
-                    <a href="#experience">Pengalaman</a>
-                    <a href="#projects">Portfolio</a>
+                    <a href="#about" class="active">
+                        <span class="lang-id">Pendekatan Saya</span>
+                        <span class="lang-en">My Approach</span>
+                    </a>
+                    <a href="#experience">
+                        <span class="lang-id">Pengalaman</span>
+                        <span class="lang-en">Experience</span>
+                    </a>
+                    <a href="#projects">
+                        <span class="lang-id">Portfolio</span>
+                        <span class="lang-en">Portfolio</span>
+                    </a>
                 </nav>
             </div>
 
@@ -415,6 +450,13 @@
                 <a href="https://github.com/bang-xinn" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.instagram.com/mhddnmzk" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="mailto:contact@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                
+                <!-- Translation Toggle -->
+                <button class="lang-toggle-btn" onclick="toggleLanguage()" aria-label="Toggle Language">
+                    <i class="fa-solid fa-globe"></i>
+                    <span class="lang-id">English</span>
+                    <span class="lang-en">Indonesia</span>
+                </button>
             </div>
         </aside>
 
@@ -423,14 +465,23 @@
             
             <!-- About Section -->
             <section id="about">
-                <h2 class="section-title">Pendekatan Saya</h2>
+                <h2 class="section-title">
+                    <span class="lang-id">Pendekatan Saya</span>
+                    <span class="lang-en">My Approach</span>
+                </h2>
                 <div class="story-text">
-                    <p><strong>Hi, Nama saya Muhammad Dino Muzakki dan saya adalah seorang Machine Learning dan Website Developer.</strong> Saya berspesialisasi dalam membangun aplikasi web <em>full-stack</em> yang terintegrasi dengan model Machine Learning untuk menciptakan solusi digital yang cerdas dan skalabel.</p>
-                    <p>Fokus saya adalah menjembatani dunia data dan web—kemampuan merancang model ML sekaligus mendesain antarmuka web yang responsif untuk menyajikan data tersebut kepada pengguna. Sebagai contoh, saya telah mengembangkan model Machine Learning berbasis Python menggunakan algoritma <em>Naive Bayes</em>, <em>Decision Tree</em>, dan <em>Linear Regression</em> untuk melakukan <em>forecasting</em> sentimen produk Scarlett di platform Tokopedia.</p>
+                    <p class="lang-id"><strong>Hi, Nama saya Muhammad Dino Muzakki dan saya adalah seorang Machine Learning dan Website Developer.</strong> Saya berspesialisasi dalam membangun aplikasi web <em>full-stack</em> yang terintegrasi dengan model Machine Learning untuk menciptakan solusi digital yang cerdas dan skalabel.</p>
+                    <p class="lang-en"><strong>Hi, my name is Muhammad Dino Muzakki and I am a Machine Learning and Website Developer.</strong> I specialize in building <em>full-stack</em> web applications integrated with Machine Learning models to create smart and scalable digital solutions.</p>
+                    
+                    <p class="lang-id">Fokus saya adalah menjembatani dunia data dan web—kemampuan merancang model ML sekaligus mendesain antarmuka web yang responsif untuk menyajikan data tersebut kepada pengguna. Sebagai contoh, saya telah mengembangkan model Machine Learning berbasis Python menggunakan algoritma <em>Naive Bayes</em>, <em>Decision Tree</em>, dan <em>Linear Regression</em> untuk melakukan <em>forecasting</em> sentimen produk Scarlett di platform Tokopedia.</p>
+                    <p class="lang-en">My focus is bridging the world of data and web—designing accurate ML models while building responsive web interfaces to present those data insights to users. For instance, I have developed a Python-based Machine Learning model using <em>Naive Bayes</em>, <em>Decision Tree</em>, and <em>Linear Regression</em> algorithms to forecast public sentiment for Scarlett products on the Tokopedia platform.</p>
                 </div>
                 
                 <div style="margin-top: 30px;">
-                    <h3 style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 15px;">Fokus & Layanan:</h3>
+                    <h3 style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 15px;">
+                        <span class="lang-id">Fokus & Layanan:</span>
+                        <span class="lang-en">Focus & Services:</span>
+                    </h3>
                     <div class="skills-wrap">
                         <span class="skill-tag"><i class="fa-solid fa-brain"></i> Machine Learning</span>
                         <span class="skill-tag"><i class="fa-solid fa-desktop"></i> Web Development</span>
@@ -442,7 +493,10 @@
 
             <!-- Experience Section -->
             <section id="experience">
-                <h2 class="section-title">Pengalaman</h2>
+                <h2 class="section-title">
+                    <span class="lang-id">Pengalaman</span>
+                    <span class="lang-en">Experience</span>
+                </h2>
                 
                 <div class="card">
                     <div class="card-header">
@@ -450,11 +504,14 @@
                             <img src="assets/logo-kemenkumham.png" alt="Kemenkumham" onerror="this.src='logo-kemenkumham.png'">
                         </div>
                         <div class="card-title-group">
-                            <h3>Humas (Hubungan Masyarakat)</h3>
-                            <div class="meta">Kanwil Kementerian Hukum Sumatera Barat • 2026 (Internship)</div>
+                            <h3 class="lang-id">Humas (Hubungan Masyarakat)</h3>
+                            <h3 class="lang-en">Public Relations</h3>
+                            <div class="meta lang-id">Kanwil Kementerian Hukum Sumatera Barat • 2026 (Internship)</div>
+                            <div class="meta lang-en">Regional Office of the Ministry of Law, West Sumatra • 2026 (Internship)</div>
                         </div>
                     </div>
-                    <p>Bertanggung jawab merancang desain visual, termasuk membuat materi publikasi untuk acara besar kantor dan mendesain aset digital untuk hari-hari besar sepanjang tahun 2026.</p>
+                    <p class="lang-id">Bertanggung jawab merancang desain visual, termasuk membuat materi publikasi untuk acara besar kantor dan mendesain aset digital untuk hari-hari besar sepanjang tahun 2026.</p>
+                    <p class="lang-en">Responsible for visual design, including creating publication materials for major office events and designing digital assets for national holidays throughout 2026.</p>
                 </div>
 
                 <div class="card">
@@ -463,25 +520,35 @@
                             <img src="assets/logo-unp.png" alt="UNP" onerror="this.src='logo-unp.png'">
                         </div>
                         <div class="card-title-group">
-                            <h3>Pendidikan Teknik Informatika</h3>
-                            <div class="meta">Universitas Negeri Padang • 2022 - 2026</div>
+                            <h3 class="lang-id">Pendidikan Teknik Informatika</h3>
+                            <h3 class="lang-en">Informatics Engineering Education</h3>
+                            <div class="meta lang-id">Universitas Negeri Padang • 2022 - 2026</div>
+                            <div class="meta lang-en">Padang State University • 2022 - 2026</div>
                         </div>
                     </div>
-                    <p>Berfokus pada pengembangan perangkat lunak, algoritma struktur data, dan rekayasa perangkat lunak pendidikan.</p>
+                    <p class="lang-id">Berfokus pada pengembangan perangkat lunak, algoritma struktur data, dan rekayasa perangkat lunak pendidikan.</p>
+                    <p class="lang-en">Focused on software development, data structure algorithms, and educational software engineering.</p>
                 </div>
             </section>
 
             <!-- Projects Section -->
             <section id="projects">
-                <h2 class="section-title">Portfolio Terbaru</h2>
+                <h2 class="section-title">
+                    <span class="lang-id">Portfolio Terbaru</span>
+                    <span class="lang-en">Recent Portfolio</span>
+                </h2>
                 
                 <div class="card" style="padding: 10px 20px;">
                     <!-- Project 1 -->
                     <div class="project-card">
                         <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=300&auto=format&fit=crop" alt="KasirQ" class="project-img">
                         <div class="project-info">
-                            <h3>KasirQ - Sistem Manajemen Kasir</h3>
-                            <p>Aplikasi point-of-sale berbasis web menggunakan arsitektur MVC Laravel untuk memudahkan pencatatan transaksi dan manajemen stok barang.</p>
+                            <h3 class="lang-id">KasirQ - Sistem Manajemen Kasir</h3>
+                            <h3 class="lang-en">KasirQ - Cashier Management System</h3>
+                            
+                            <p class="lang-id">Aplikasi point-of-sale berbasis web menggunakan arsitektur MVC Laravel untuk memudahkan pencatatan transaksi dan manajemen stok barang.</p>
+                            <p class="lang-en">Web-based point-of-sale application using Laravel's MVC architecture to streamline transaction recording and inventory management.</p>
+                            
                             <div class="project-links">
                                 <a href="https://github.com/bang-xinn/KasirQ" target="_blank" class="link-item">
                                     <i class="fa-brands fa-github"></i> Source Code
@@ -494,8 +561,12 @@
                     <div class="project-card">
                         <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=300&auto=format&fit=crop" alt="Sentiment Analysis" class="project-img">
                         <div class="project-info">
-                            <h3>Analisis Sentimen: Scarlett</h3>
-                            <p>Implementasi model klasifikasi Machine Learning (Naive Bayes, Decision Tree) untuk mengukur sentimen publik, terintegrasi penuh dengan dashboard Laravel.</p>
+                            <h3 class="lang-id">Analisis Sentimen: Scarlett</h3>
+                            <h3 class="lang-en">Sentiment Analysis: Scarlett</h3>
+                            
+                            <p class="lang-id">Implementasi model klasifikasi Machine Learning (Naive Bayes, Decision Tree) untuk mengukur sentimen publik, terintegrasi penuh dengan dashboard Laravel.</p>
+                            <p class="lang-en">Implementation of Machine Learning classification models (Naive Bayes, Decision Tree) to measure public sentiment, fully integrated with a Laravel dashboard.</p>
+                            
                             <div class="project-links">
                                 <a href="https://github.com/bang-xinn/" target="_blank" class="link-item">
                                     <i class="fa-brands fa-github"></i> Repository
@@ -506,13 +577,24 @@
                 </div>
             </section>
 
-
-
         </main>
     </div>
 
-    <!-- Script to handle Intersection Observer for sidebar nav highlighting -->
     <script>
+        // Language Toggle Logic
+        function toggleLanguage() {
+            const body = document.body;
+            body.classList.toggle('english-mode');
+            
+            // Update document language attribute for accessibility
+            if(body.classList.contains('english-mode')) {
+                document.documentElement.lang = 'en';
+            } else {
+                document.documentElement.lang = 'id';
+            }
+        }
+
+        // Intersection Observer for sidebar nav highlighting
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('main section');
             const navLinks = document.querySelectorAll('.sidebar-nav a');
@@ -526,9 +608,7 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Remove active class from all
                         navLinks.forEach(link => link.classList.remove('active'));
-                        // Add active class to intersecting section's link
                         const activeId = entry.target.getAttribute('id');
                         const activeLink = document.querySelector(`.sidebar-nav a[href="#${activeId}"]`);
                         if (activeLink) activeLink.classList.add('active');
